@@ -1038,6 +1038,7 @@ class App {
 						const additionalData = await WorkflowExecuteAdditionalData.getBase();
 						if (this.isUserManagementEnabled) {
 							// TODO: test this.
+							// @ts-ignore
 							additionalData.userId = req.body.userId;
 						}
 						const nodeTypes = NodeTypes();

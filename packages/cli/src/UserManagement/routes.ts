@@ -1,9 +1,15 @@
+// @ts-nocheck
+
 import * as express from 'express';
 import { Db, ResponseHelper } from '..';
 import { User } from '../databases/entities/User';
 import { getInstance } from './email';
 
+import { authenticationRoutes } from './auth/routes';
+
 export function addRoutes(): void {
+	authenticationRoutes.apply(this);
+
 	// ----------------------------------------
 	// Create instance owner
 	// ----------------------------------------
